@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organic Karnali</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <script src="js/handlecartitem.js" async defer></script>
+
+    <script src="js/buyproduct.js" async defer></script>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__cart">
+            <ul>
+                <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span>
+                    <%= cart %>
+                </span></a></li>
+            </ul>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/yourorder">Your order</a></li>
+
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/yourorder">Your order</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li>
+                                <a href="/cart"><i class="fa fa-shopping-bag"></i> <span id="cart-number">
+                                <%= cart %>
+                            </span></a></li>
+                            <% if(!userName) { %>
+                                <li>
+                                    <a class="btn btn-primary" href="/auth/google">
+                                        Login
+                                    </a>
+                                </li>
+                           <% }else{%>
+                            <a class="btn btn-mute" href="/yourorder">
+                                <%= userName %>
+                            </a>
+                            <buttOn id="logout" class="btn btn-warning">
+                                logout
+                            </buttOn>
+                            <% }%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                    All Categories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                        <div class="hero__text">
+                            <span>FROM KARNALI REGION</span>
+                            <h2>100% Organic</h2>
+                            <a href="/" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/yarsa.jpg">
+                            <h5><a href="#">Organic Herbs</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/hembag.jpg">
+                            <h5><a href="#">Organi Clothes</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/marsirice.jpg">
+                            <h5><a href="#">Organic Food</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Featured Product</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".food">Organic food</li>
+                            <li data-filter=".herb">Organic herbs</li>
+                            <li data-filter=".clothes">Organic clothes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/marsirice.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="200"
+                                    data-product="jumli marsi chamal"
+                                    data-productimg="img/product/marsirice.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=jumli-marsi-chamal&price=200&productImg=img/product/marsirice.jpg" class="btn btn-success" id="product">
+                                Jumli Marsi Chamal
+                            </a>
+                            <h5>Rs200</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/simi.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li>
+                                    <span 
+                                    data-price="180"
+                                    data-product="jumli simi"
+                                    data-productimg="img/product/simi.jpg"
+                                    id="product-item">
+                                        <i id="add-cart-btn" class="fa fa-shopping-cart"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                                <a href="/product?productName=jumli-simi&price=180&productImg=img/product/simi.jpg" class="btn btn-success" id="product">
+                                    Jumli Simi
+                                </a>
+                            <h5>Rs180</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/ookhar1.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li>
+                                    <span 
+                                    data-price="220"
+                                    data-product="ookhar"
+                                    data-productimg="img/product/ookhar1.jpg"
+                                    id="product-item">
+                                        <i id="add-cart-btn" class="fa fa-shopping-cart"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=ookhar&price=220&productImg=img/product/ookhar1.jpg" class="btn btn-success" id="product">
+                                Ookhar
+                            </a>
+                            <h5>Rs220</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/jimbu1.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li>
+                                    <span 
+                                    data-price="300"
+                                    data-product="jimbu"
+                                    data-productimg="img/product/jimbu1.jpg"
+                                    id="product-item">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=jimbu&price=300&productImg=img/product/jimbu1.jpg" class="btn btn-success" id="product">
+                                Jimbu
+                            </a>
+                            <h5>Rs300</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/churpi.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li>
+                                <span 
+                                data-price="190"
+                                data-productimg="img/product/churpi.jpg"
+                                id="product-item" 
+                                data-product="churpi">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=churpi&price=190&productImg=img/product/churpi.jpg" class="btn btn-success" id="product">
+                                Churpi
+                            </a>
+                            <h5>Rs190</h5>
+                        </div>
+                        </div>
+                    </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix herb">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/yarsa.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li>
+                                    <span 
+                                    data-price="1000"
+                                    data-product="yarsagumba"
+                                    data-productimg="img/product/yarsa.jpg"
+                                    id="product-item">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=yarsagumba&price=1000&productImg=img/product/yarsa.jpg" class="btn btn-success" id="product">
+                                Yarsagumba
+                            </a>
+                            <h5>Rs1000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/syaukochana.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="100"
+                                    data-productimg="img/product/syaukochana.jpg"
+                                    data-product="syau ko chana"
+                                    id="product-item">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a  href="/product?productName=syau-ko-chana&price=100&productImg=img/product/syaukochana.jpg" class="btn btn-success" id="product">
+                                Syau ko chana
+                            </a>
+                            <h5>Rs100</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/syau.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="130"
+                                    data-product="syau"
+                                    data-productimg="img/product/syau.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=syau&price=130&productImg=img/product/syau.jpg" class="btn btn-success" id="product">
+                                syau
+                            </a>
+                            <h5>Rs130</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/chino.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="180"
+                                    data-product="chino"
+                                    data-productimg="img/product/chino.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=chino&price=180&productImg=img/product/chino.jpg" class="btn btn-success" id="product">
+                                Chino
+                            </a>
+                            <h5>Rs180</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/kaguno.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="200"
+                                    data-product="kaguno"
+                                    data-productimg="img/product/kaguno.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=kaguno&price=200&productImg=img/product/kaguno.jpg" class="btn btn-success" id="product">
+                                Kaguno
+                            </a>
+                            <h5>Rs200</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix food">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/marshya.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="210"
+                                    data-product="marshya"
+                                    data-productimg="img/product/marshya.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=marshya&price=210&productImg=img/product/marshya.jpg" class="btn btn-success" id="product">
+                                Marshya
+                            </a>
+                            <h5>Rs210</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/rabbitcap.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="2000"
+                                    data-product="rabbit cap"
+                                    data-productimg="img/product/rabbitcap.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=rabbit-cap&price=2000&productImg=img/product/rabbitcap.jpg" class="btn btn-success" id="product">
+                                Rabbit cap
+                            </a>
+                            <h5>Rs2000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/hembag.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="2500"
+                                    data-product="hembag"
+                                    data-productimg="img/product/hembag.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=hem-bag&price=2000&productImg=img/product/hembag.jpg" class="btn btn-success" id="product">
+                                Hem bag
+                            </a>
+                            <h5>Rs2500</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/radipakhi.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><span 
+                                    data-price="2100"
+                                    data-product="radipakhi"
+                                    data-productimg="img/product/radipakhi.jpg"
+                                    id="product-item"><i class="fa fa-shopping-cart"></i></span></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <a href="/product?productName=radipakhi&price=2000&productImg=img/product/radipakhi.jpg" class="btn btn-success" id="product">
+                                Radipakhi
+                            </a>
+                            <h5>Rs2100</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+
+    <!-- Latest Product Section Begin -->
+    <section class="latest-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Latest Products</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/radipakhi.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Radipakhi</h6>
+                                        <span>Rs2100</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/hembag.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Hembag</h6>
+                                        <span>Rs2500</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/syau.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Syau</h6>
+                                        <span>Rs130</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/marshya.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Marshya</h6>
+                                        <span>Rs210</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/jimbu1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Jimbu</h6>
+                                        <span>Rs300</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/chino.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Chino</h6>
+                                        <span>Rs180</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Top Rated Products</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/kaguno.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kaguno</h6>
+                                        <span>Rs300</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/millet.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Millet</h6>
+                                        <span>Rs400</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/churpi.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Churpi</h6>
+                                        <span>Rs190</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/simi.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Jumli simi</h6>
+                                        <span>Rs180</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/timur.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Timur</h6>
+                                        <span>Rs200</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/yarsa.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Yarsagumba</h6>
+                                        <span>Rs1000</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Review Products</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/lasun.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Lasun</h6>
+                                        <span>Rs150</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/kodo.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kodo</h6>
+                                        <span>Rs300</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/marsirice.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Jumli marsi chamal</h6>
+                                        <span>Rs200</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/ookhar1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Ookhar</h6>
+                                        <span>Rs220</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/rabbitcap.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Rabbit cap</h6>
+                                        <span>Rs2000</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/syaukochana.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Syau ko chana</h6>
+                                        <span>Rs100</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Product Section End -->
+
+    <!-- Blog Section Begin -->
+
+    <!-- Blog Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <ul>
+                            <li>Address: Birendranagar, Surkhet</li>
+                            <li>Phone: 083-52-4444</li>
+                            <li>Email: organickarnali@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const logoutBtn = document.getElementById('logout')
+        if(logoutBtn){
+            logoutBtn.addEventListener('click',logoutUser)
+
+        }
+        async function logoutUser(){
+            try{
+                const res = await fetch('/logout',{
+                    'method' :'POST'
+                })
+                if(res.status === 200) window.location.href = '/'
+            }catch(err){
+                console.error(err)
+            }
+        }
+    </script>
+</body>
+
+</html>
